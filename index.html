@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Factory Incremental</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>
+        <button><a href="#" onclick="MineIron()"><img src=pickaxe.png width="50px" height="50px"></a></button>
+      </td>
+      <td>
+        <button><a href="#" onclick="MineCopper()"><img src=pickaxe.png width="50px" height="50px"></a></button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><img src="ironore.png" width="30px" height="30px">Iron Ore: <span id="ironOreText">0</span></p>
+      </td>
+      <td>
+        <p><img src="copperore.png" width="30px" height="30px">Copper Ore: <span id="copperOreText">0</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="smeltIron" onclick="SmeltIron()"><img src=furnace.png width="50px" height="50px"></a></button>
+      </td>
+      <td>
+        <button id="smeltCopper" onclick="SmeltCopper()"><img src=furnace.png width="50px" height="50px"></a></button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <p><img src="ironingot.png" width="30px" height="30px">Iron Ingots: <span id="ironIngotText">0</span></p>
+      </td>
+      <td>
+        <p><img src="copperingot.png" width="30px" height="30px">Copper Ingots: <span id="copperIngotText">0</span></p>  
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="makeGear" onclick="MakeGear()"><img src=hammer.png width="50px" height="50px"></a></button>
+      </td>
+      <td>
+        <button id="makeWire" onclick="MakeWire()"><img src=hammer.png width="50px" height="50px"></a></button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><img src="irongear.png" width="30px" height="30px">Iron Gears: <span id="ironGearText">0</span></p> 
+      </td>
+      <td>
+        <p><img src="copperwire.png" width="30px" height="30px">Copper Wire: <span id="copperWireText">0</span></p> 
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

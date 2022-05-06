@@ -1,0 +1,12 @@
+Just my general plan for this game idea.
+
+Inspired by Factorio.
+
+Start with having to mine basic resources (Iron Ore, stone, cut down trees, etc)
+
+Refine those resources (ores to metals, stone to slabs/bricks, trees to lumber)
+
+combine items to make more advanced materials:
+Tier 1: single inputs (iron ingots for gears and rods, copper ingots for wire, )
+
+Tier 2: Coombine single inputs with refined materials ()
