@@ -1,4 +1,80 @@
 html, body {
   height: 100%;
-  width: 100%;
+  width: 99%;
 }
+
+.leftpane{
+  width: 15%;
+  min-width: 200px;
+  height: 99%;
+    float: left;
+    background-color: rosybrown;
+    border-collapse: collapse;
+}
+
+.mainbody{
+  width: 100%;
+  height: 100%;
+}
+/* tab style */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* tab buttons style */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none; /* edit these */
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+
+#ironProg {
+  width: 50px;
+  background-color: #535350;
+}
+
+#copperProg {
+  width: 50px;
+  background-color: #8b5523;
+}
+#ironBar {
+  width: 0%;
+  height: 20px;
+  background-color: #04AA6D;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 20px; /* To center it vertically */
+  color: white;
+}
+
+#progressBar {
+  width: 50px;
+  border-style: ridge;
+  background-color: #ddd;
+}
+
+/* testing stuff */

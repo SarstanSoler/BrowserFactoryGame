@@ -10,56 +10,244 @@
 </head>
 
 <body>
-  <table>
-    <tr>
-      <td>
-        <button><a href="#" onclick="MineIron()"><img src=pickaxe.png width="50px" height="50px"></a></button>
-      </td>
-      <td>
-        <button><a href="#" onclick="MineCopper()"><img src=pickaxe.png width="50px" height="50px"></a></button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><img src="ironore.png" width="30px" height="30px">Iron Ore: <span id="ironOreText">0</span></p>
-      </td>
-      <td>
-        <p><img src="copperore.png" width="30px" height="30px">Copper Ore: <span id="copperOreText">0</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <button id="smeltIron" onclick="SmeltIron()"><img src=furnace.png width="50px" height="50px"></a></button>
-      </td>
-      <td>
-        <button id="smeltCopper" onclick="SmeltCopper()"><img src=furnace.png width="50px" height="50px"></a></button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <p><img src="ironingot.png" width="30px" height="30px">Iron Ingots: <span id="ironIngotText">0</span></p>
-      </td>
-      <td>
-        <p><img src="copperingot.png" width="30px" height="30px">Copper Ingots: <span id="copperIngotText">0</span></p>  
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <button id="makeGear" onclick="MakeGear()"><img src=hammer.png width="50px" height="50px"></a></button>
-      </td>
-      <td>
-        <button id="makeWire" onclick="MakeWire()"><img src=hammer.png width="50px" height="50px"></a></button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><img src="irongear.png" width="30px" height="30px">Iron Gears: <span id="ironGearText">0</span></p> 
-      </td>
-      <td>
-        <p><img src="copperwire.png" width="30px" height="30px">Copper Wire: <span id="copperWireText">0</span></p> 
-      </td>
-    </tr>
-  </table>
+  <div class="leftpane">
+    <!-- start of left pane -->
+    <br>
+    <img src="pulser.png" width="30px" height="30px">Power: <span id="remainingPowerText">0</span>/<span
+      id="totalPowerText">0</span> <!-- change picture -->
+    <br>
+    <b><u>
+        <center>Raw</center>
+      </u></b>
+    <img src="pulser.png" width="30px" height="30px">Coal: <span id="coalText">0</span> <!-- change picture -->
+    <br>
+    <img src="stone.png" width="30px" height="30px">Stone: <span id="stoneText">0</span>
+    <br>
+    <img src="ironore.png" width="30px" height="30px">Iron Ore: <span id="ironOreText">0</span>
+    <br>
+    <img src="copperore.png" width="30px" height="30px">Copper Ore: <span id="copperOreText">0</span>
+
+    <b><u>
+        <center>Refined</center>
+      </u></b>
+
+    <img src="ironingot.png" width="30px" height="30px">Iron Ingots: <span id="ironIngotText">0</span>
+    <br>
+    <img src="copperingot.png" width="30px" height="30px">Copper Ingots: <span id="copperIngotText">0</span>
+
+    <b><u>
+        <center>Parts</center>
+      </u></b>
+
+    <img src="irongear.png" width="30px" height="30px">Iron Gears: <span id="ironGearText">0</span>
+    <br>
+    <img src="copperwire.png" width="30px" height="30px">Copper Wire: <span id="copperWireText">0</span>
+
+    <br>
+    <b><u>
+        <center>Power</center>
+      </u></b>
+
+    <img src="blueprint.png" width="30px" height="30px">Generator: <span id="activeGeneratorText">0</span>/<span
+      id="generatorText">0</span>
+
+    <br>
+    <b><u>
+        <center>Miners</center>
+      </u></b>
+    <img src="blueprint.png" width="30px" height="30px">Miner: <span id="minerText">0</span>
+
+    <br>
+    <b><u>
+        <center>Furnaces</center>
+      </u></b>
+    <img src="blueprint.png" width="30px" height="30px">Furnaces: <span id="furnaceText">0</span>
+
+
+  </div> <!-- left pane -->
+
+
+  <div class="mainbody">
+    <div class="tab">
+      <!-- start of dividing into tabs -->
+      <button class="tablinks" onclick="openTab(event, 'Mining')" id="defaultOpen">Mining </button>
+      <button class="tablinks" onclick="openTab(event, 'Smelting')">Smelting</button>
+      <button class="tablinks" onclick="openTab(event, 'Production')">Production</button>
+    </div> <!-- tabs list -->
+
+    <div id="Mining" class="tabcontent">
+      <table>
+        <tr>
+          <td colspan="4">Mining</td>
+        </tr>
+        <tr>
+          <td>
+            <button onclick="MineCoal()"><img src=pulser.png width="50px" height="50px"><br>Coal</button>
+          </td>
+          <td>
+            <button onclick="MineStone()"><img src=stone.png width="50px" height="50px"><br>Stone</button>
+          </td>
+          <td>
+            <button onclick="MineIron()"><img src=ironore.png width="50px" height="50px"><br>Iron</button>
+          </td>
+          <td>
+            <button onclick="MineCopper()"><img src=copperore.png width="50px" height="50px"><br>Copper</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">Autominers <br>
+            (requires 3 power each)</td>
+        </tr>
+        <tr>
+          <td><button onclick="AddCoalMiner()">+</button><span id="coalMinerText">0</span><button
+              onclick="SubCoalMiner()">-</button><br>Coal</td>
+          <td><button onclick="AddStoneMiner()">+</button><span id="stoneMinerText">0</span><button
+              onclick="SubStoneMiner()">-</button><br>Stone</td>
+          <td><button onclick="AddIronMiner()">+</button><span id="ironMinerText">0</span><button
+              onclick="SubIronMiner()">-</button><br>Iron</td>
+          <td><button onclick="AddCopperMiner()">+</button><span id="copperMinerText">0</span><button
+              onclick="SubCopperMiner()">-</button><br>Copper</td>
+        </tr>
+      </table>
+
+    </div> <!-- Mining Tab -->
+
+    <div id="Smelting" class="tabcontent">
+      <!-- Smelting Tab -->
+      <table>
+        <tr>
+          <td>
+            <button id="smeltIron" onclick="SmeltIron()"><img src=furnace.png width="50px" height="50px"><br>Smelt
+              Iron</button>
+            <br>
+            <div id="progressBar">
+              <progress id="ironProg" max="50"></progress>
+            </div>
+            <br>
+            <span id="ironOreReqText"></span>x <img src=ironore.png width="20px" height="20px"><br><span
+              id="icoalReqText"></span>x <img src=pulser.png width="20px" height="20px">
+            <!-- <div id="ironProg">
+          <div id="ironBar"></div>
+        </div> -->
+          </td>
+          <td>
+            <button id="smeltCopper" onclick="SmeltCopper()"><img src=furnace.png width="50px" height="50px"><br>Smelt
+              Copper</button>
+            <br>
+            <div id="progressBar">
+              <progress id="copperProg" max="100"></progress>
+            </div>
+            <br>
+            <span id="copperOreReqText"></span>x <img src=copperore.png width="20px" height="20px"><br><span
+              id="ccoalReqText"></span>x <img src=pulser.png width="20px" height="20px">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Furnaces</td>
+        </tr>
+        <tr>
+          <td><button onclick="AddIronFurnace()">+</button><span id="ironFurnaceText">0</span><button
+              onclick="SubIronFurnace()">-</button><br>Coal</td>
+          <td><button onclick="AddCopperFurnace()">+</button><span id="copperFurnaceText">0</span><button
+              onclick="SubCopperFurnace()">-</button><br>Coal</td>
+        </tr>
+      </table>
+    </div> <!-- Smelting tab -->
+
+
+    <div id="Production" class="tabcontent">
+      <table>
+        <tr>
+          <td>
+            <button id="makeGear" onclick="MakeGear()"><img src=hammer.png width="50px" height="50px"><br>Iron
+              Gear</button>
+          </td>
+          <td>
+            <button id="makeWire" onclick="MakeWire()"><img src=hammer.png width="50px" height="50px"><br>Copper
+              Wire</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span id="ironGearReqText"></span>x <img src=ironingot.png width="20px" height="20px">
+          </td>
+          <td>
+            <span id="copperWireReqText"></span>x <img src=copperingot.png width="20px" height="20px">
+          </td>
+        </tr>
+        <td colspan=4>
+          <hr>
+        </td>
+        <tr>
+          <td>
+            <button id="makeGenerator" onclick="MakeGenerator()"><img src=hammer.png width="50px"
+                height="50px"><br>Generator</button>
+          </td>
+          <td>
+            <button id="makeMiner" onclick="MakeMiner()"><img src=hammer.png width="50px"
+                height="50px"><br>Miner</button>
+          </td>
+          <td>
+            <button id="makeFurnace" onclick="MakeFurnace()"><img src=hammer.png width="50px"
+                height="50px"><br>Furnace</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span id="gengReqText"></span>x <img src=irongear.png width="20px" height="20px">
+            <br>
+            <span id="genwReqText"></span>x <img src=copperwire.png width="20px" height="20px">
+            <br>
+            <span id="gensReqText"></span>x <img src=stone.png width="20px" height="20px">
+          </td>
+          <td>
+            <span id="minergReqText"></span>x <img src=irongear.png width="20px" height="20px">
+            <br>
+            <span id="minerwReqText"></span>x <img src=copperwire.png width="20px" height="20px">
+            <br>
+            <span id="minersReqText"></span>x <img src=stone.png width="20px" height="20px">
+          </td>
+          <td>
+            <span id="furnacegReqText"></span>x <img src=irongear.png width="20px" height="20px">
+            <br>
+            <span id="furnacewReqText"></span>x <img src=copperwire.png width="20px" height="20px">
+            <br>
+            <span id="furnacesReqText"></span>x <img src=stone.png width="20px" height="20px">
+          </td>
+        </tr>
+        <tr>
+          <td colspan=4>
+            <hr>
+          </td>
+        </tr>
+        <br>
+        <td colspan=4>
+          <b><u>Active Generators:</u></b>
+          <br>
+          (requires 1 coal per second each)
+          <br>
+          <button onclick="AddGen()">+</button><span id="activeGeneratorText2">0</span>/<span
+            id="generatorText2">0</span><button onclick="SubGen()">-</button>
+        </td>
+        <tr>
+
+          <td></td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+    </div>
 </body>
 
 </html>
