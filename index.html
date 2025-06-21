@@ -169,11 +169,11 @@
       <table>
         <tr>
           <td>
-            <button id="makeGear" onclick="MakeGear()"><img src=hammer.png width="50px" height="50px"><br>Iron
+            <button id="makeGear" onclick="makeGear()"><img src=hammer.png width="50px" height="50px"><br>Iron
               Gear</button>
           </td>
           <td>
-            <button id="makeWire" onclick="MakeWire()"><img src=hammer.png width="50px" height="50px"><br>Copper
+            <button id="makeWire" onclick="makeWire()"><img src=hammer.png width="50px" height="50px"><br>Copper
               Wire</button>
           </td>
         </tr>
@@ -190,15 +190,15 @@
         </td>
         <tr>
           <td>
-            <button id="makeGenerator" onclick="MakeGenerator()"><img src=hammer.png width="50px"
+            <button id="makeGenerator" onclick="makeGenerator()"><img src=hammer.png width="50px"
                 height="50px"><br>Generator</button>
           </td>
           <td>
-            <button id="makeMiner" onclick="MakeMiner()"><img src=hammer.png width="50px"
+            <button id="makeMiner" onclick="makeMiner()"><img src=hammer.png width="50px"
                 height="50px"><br>Miner</button>
           </td>
           <td>
-            <button id="makeFurnace" onclick="MakeFurnace()"><img src=hammer.png width="50px"
+            <button id="makeFurnace" onclick="makeFurnace()"><img src=hammer.png width="50px"
                 height="50px"><br>Furnace</button>
           </td>
         </tr>
@@ -236,8 +236,8 @@
           <br>
           (requires 1 coal per second each)
           <br>
-          <button onclick="AddGen()">+</button><span id="activeGeneratorText2">0</span>/<span
-            id="generatorText2">0</span><button onclick="SubGen()">-</button>
+          <button onclick="assignGenerator('add')">+</button><span id="activeGeneratorText2">0</span>/<span
+            id="generatorText2">0</span><button onclick="assignGenerator('sub')">-</button>
         </td>
         <tr>
 
