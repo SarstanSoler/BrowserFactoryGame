@@ -82,16 +82,16 @@
         </tr>
         <tr>
           <td>
-            <button onclick="MineCoal()"><img src=pulser.png width="50px" height="50px"><br>Coal</button>
+            <button onclick="mine('coal')"><img src=pulser.png width="50px" height="50px"><br>Coal</button>
           </td>
           <td>
-            <button onclick="MineStone()"><img src=stone.png width="50px" height="50px"><br>Stone</button>
+            <button onclick="mine('stone')"><img src=stone.png width="50px" height="50px"><br>Stone</button>
           </td>
           <td>
-            <button onclick="MineIron()"><img src=ironore.png width="50px" height="50px"><br>Iron</button>
+            <button onclick="mine('ironOre')"><img src=ironore.png width="50px" height="50px"><br>Iron</button>
           </td>
           <td>
-            <button onclick="MineCopper()"><img src=copperore.png width="50px" height="50px"><br>Copper</button>
+            <button onclick="mine('copperOre')"><img src=copperore.png width="50px" height="50px"><br>Copper</button>
           </td>
         </tr>
         <tr>
@@ -104,14 +104,14 @@
             (requires 3 power each)</td>
         </tr>
         <tr>
-          <td><button onclick="AddCoalMiner()">+</button><span id="coalMinerText">0</span><button
-              onclick="SubCoalMiner()">-</button><br>Coal</td>
-          <td><button onclick="AddStoneMiner()">+</button><span id="stoneMinerText">0</span><button
-              onclick="SubStoneMiner()">-</button><br>Stone</td>
-          <td><button onclick="AddIronMiner()">+</button><span id="ironMinerText">0</span><button
-              onclick="SubIronMiner()">-</button><br>Iron</td>
-          <td><button onclick="AddCopperMiner()">+</button><span id="copperMinerText">0</span><button
-              onclick="SubCopperMiner()">-</button><br>Copper</td>
+          <td><button onclick="assignMiner('coal', 'add')">+</button><span id="coalMinerText">0</span><button
+              onclick="assignMiner('coal', 'sub')">-</button><br>Coal</td>
+          <td><button onclick="assignMiner('stone', 'add')">+</button><span id="stoneMinerText">0</span><button
+              onclick="assignMiner('stone', 'sub')">-</button><br>Stone</td>
+          <td><button onclick="assignMiner('iron', 'add')">+</button><span id="ironMinerText">0</span><button
+              onclick="assignMiner('iron', 'sub')">-</button><br>Iron</td>
+          <td><button onclick="assignMiner('copper', 'add')">+</button><span id="copperMinerText">0</span><button
+              onclick="assignMiner('copper', 'sub')">-</button><br>Copper</td>
         </tr>
       </table>
 
@@ -122,7 +122,7 @@
       <table>
         <tr>
           <td>
-            <button id="smeltIron" onclick="SmeltIron()"><img src=furnace.png width="50px" height="50px"><br>Smelt
+            <button id="smeltIron" onclick="smeltWithProgress('iron', 'ironProg')"><img src=furnace.png width="50px" height="50px"><br>Smelt
               Iron</button>
             <br>
             <div id="progressBar">
@@ -136,7 +136,7 @@
         </div> -->
           </td>
           <td>
-            <button id="smeltCopper" onclick="SmeltCopper()"><img src=furnace.png width="50px" height="50px"><br>Smelt
+            <button id="smeltCopper" onclick="smeltWithprogress('copper', 'copperProg')"><img src=furnace.png width="50px" height="50px"><br>Smelt
               Copper</button>
             <br>
             <div id="progressBar">
@@ -156,10 +156,10 @@
           <td colspan="2">Furnaces</td>
         </tr>
         <tr>
-          <td><button onclick="AddIronFurnace()">+</button><span id="ironFurnaceText">0</span><button
-              onclick="SubIronFurnace()">-</button><br>Coal</td>
-          <td><button onclick="AddCopperFurnace()">+</button><span id="copperFurnaceText">0</span><button
-              onclick="SubCopperFurnace()">-</button><br>Coal</td>
+          <td><button onclick="assignFurnace('iron', 'add')">+</button><span id="ironFurnaceText">0</span><button
+              onclick="assignFurnace('iron', 'sub')">-</button><br>Coal</td>
+          <td><button onclick="assignFurnace('copper', 'add')">+</button><span id="copperFurnaceText">0</span><button
+              onclick="assignFurnace('copper', 'sub')">-</button><br>Coal</td>
         </tr>
       </table>
     </div> <!-- Smelting tab -->
