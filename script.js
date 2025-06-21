@@ -4,6 +4,7 @@ window.onload = function() {
   startTab();
   update();
   startIntervals();
+
 }
 
 //define variables
@@ -12,9 +13,9 @@ const resources = {
   coal: 0,
   stone: 0,
   ironOre: 0,
-  ironIng: 0,
+  ironIngot: 0,
   copperOre: 0,
-  copperIng: 0,
+  copperIngot: 0,
   ironGear: 0,
   copperWire: 0,
   ironActive: false,
@@ -35,9 +36,9 @@ const smelter = {
 };
 
 const buildCosts = {
-  generator: { g: 5, w: 5, s: 20 },
-  miner: { g: 5, w: 5, s: 20 },
-  furnace: { g: 5, w: 5, s: 20 }
+  generator: { ironGear: 5, copperWire: 5, stone: 20 },
+  miner: { ironGear: 5, copperWire: 5, stone: 20 },
+  furnace: { ironGear: 5, copperWire: 5, stone: 20 }
 };
 
 const power = {
@@ -76,6 +77,7 @@ function update() {
   updateRequirementText();
   updateMachineText();
   updatePowerText(remainingPower);
+  updateBuildCostText();
 }
 
 function updateResourceText() {
@@ -117,6 +119,20 @@ function updateMachineText() {
 function updatePowerText(remainingPower) {
   document.getElementById('totalPowerText').innerHTML = power.total;
   document.getElementById('remainingPowerText').innerHTML = remainingPower;
+}
+
+function updateBuildCostText() {
+  document.getElementById('gengReqText').innerHTML = buildCosts.generator.ironGear;
+  document.getElementById('genwReqText').innerHTML = buildCosts.generator.copperWire;
+  document.getElementById('gensReqText').innerHTML = buildCosts.generator.stone;
+
+  document.getElementById('minergReqText').innerHTML = buildCosts.miner.ironGear;
+  document.getElementById('minerwReqText').innerHTML = buildCosts.miner.copperWire;
+  document.getElementById('minersReqText').innerHTML = buildCosts.miner.stone;
+
+  document.getElementById('furnacegReqText').innerHTML = buildCosts.furnace.ironGear;
+  document.getElementById('furnacewReqText').innerHTML = buildCosts.furnace.copperWire;
+  document.getElementById('furnacesReqText').innerHTML = buildCosts.furnace.stone;
 }
 
 
@@ -196,7 +212,7 @@ function smeltWithProgress(type, elementId, activeFlag, callback) {
     const id = setInterval(() => {
       if (width >= 100) {
         clearInterval(id);
-        resources[`${type}Ing`] += 1;
+        resources[`${type}Ingot`] += 1;
         resources[`${type}Active`] = false;
         update();
       } else {
