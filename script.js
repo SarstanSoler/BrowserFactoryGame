@@ -224,6 +224,14 @@ function smeltWithProgress(type, elementId, activeFlag, callback) {
   }
 }
 
+function MakeGear() {
+  craft("ironGear", { ironIngot: requirements.ironGear }, "ironGear");
+}
+
+function MakeWire() {
+  craft("copperWire", { copperIngot: requirements.copperWire }, "copperWire");
+}
+
 function craft(item, costs, outputKey) {
   const canCraft = Object.entries(costs).every(([key, value]) => resources[key] >= value);
   if (canCraft) {
