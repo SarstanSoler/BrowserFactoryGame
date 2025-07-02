@@ -135,6 +135,8 @@ function updateBuildCostText() {
   document.getElementById('minergReqText').innerHTML = buildCosts.miner.ironGear;
   document.getElementById('minerwReqText').innerHTML = buildCosts.miner.copperWire;
   document.getElementById('minersReqText').innerHTML = buildCosts.miner.stone;
+  document.getElementById('icoalReqText').innerHTML = requirements.coal;
+  document.getElementById('ccoalReqText').innerHTML = requirements.coal;
 
   document.getElementById('furnacegReqText').innerHTML = buildCosts.furnace.ironGear;
   document.getElementById('furnacewReqText').innerHTML = buildCosts.furnace.copperWire;
